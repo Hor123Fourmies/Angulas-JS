@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Viewport" content="width=device-width, user-scalable=no">
+    <script src="angular.min.js"></script>
+    <script src="angular-route.js"></script>
+</head>
+<body>
+
+
+<!--
+<div data-ng-app="" data-ng-init="name='Entrez votre nom'">
+    <p>Nom : <input type="text" data-ng-model="name"></p>
+    <p data-ng-bind="name"></p>
+</div>
+
+
+<div data-ng-app="monAppli" data-ng-init="name='Entrez votre nom'" data-ng-controller = "monControlleur">
+    <p>Nom : <input type="text" data-ng-model="name"></p>
+    <p>Prénom : <input type="text" data-ng-model="lastname"></p>
+    <span>Votre nom est : {{name}} {{lastname}}</span>
+    <ol>
+        <li>{{film1}}</li>
+        <li>{{film2}}</li>
+    </ol>
+</div>
+-->
+
+<div>
+    <a href="index.html">Home</a> | <a href="#/films">Films</a> | <a href="#/livres">Livres</a> |<a href="#/jeuxvideo">Jeux video</a>
+</div>
+
+<div data-ng-app="monAppli" data-ng-init="name='Entrez votre nom'" data-ng-controller="monControlleur2">
+
+    <div class="ng-view">
+
+        <!--
+        http://localhost:63342/Angular-JS/index.html#!/films
+        -->
+
+    </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

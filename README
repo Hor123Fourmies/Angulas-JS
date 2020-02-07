@@ -1,0 +1,85 @@
+ANGULAR JS - COURS
+
+1/ Anuglarjs.org pour télécharger le script et l'inclure dans le nouveau projet PHPStorm
+
+2/ Inclure le fichier dans la balise head ou au tout début du projet, juste après la balise <body>
+
+Angular JS est un framework javascript, développé par Google.
+Il y a deux versions : Angular JS et Angular.
+Angular JS est écrit en javascript; Angular est écrit en type ??
+
+Pourquoi utiliser Angular JS : pour gagner du temps pour les longs projets.
+Utilisation de template côté client.côté front.
+Les templates sont modifiés dynamiquement, soit en utilisant les entrées clients
+(modification du template en temps réel), soit ???.
+C'est très rapide pour l'utilisateur.
+
+Réalisation :
+Une application qui permet à un utilisateur de créer des listes de produits qu'il désire acheter.
+
+Attributs HTML utilisés par Angular JS:
+- Ng-app : permet d'indiquer à Angular l'élément html qui va contenir notre application
+(pour l'exécution du template)
+- Ng-model : l'élément html depuis lequel on va récupérer les données
+(il représente un ou plusieurs éléments HTML)
+Si on crée un formulaire, Angular JS va enregister les données qui sont en train d'être écrites
+- Ng-bind : l'élément html dans lequel on va insérer les données
+(on explique à Angular où on va insérer les données, dans quel élément (+/- =innerHTML)
+Ng-model et Ng-bind doivent avoir le même nom pour que la liaison puisse être faite.
+(avec JS, il aurait fallu faire un addEventListener et récupérer la valeur de l'input)
+
+Ajouter data permet que la page reste valide (w3)
+
+- Ng-init : permet de spécifier une valeur par défaut pour une variable, un modèle...
+
+Les expressions:
+Avec Angular, on peut écrire des expressions à l'intérieur des éléments HTML;
+on peut aussi afficher des valeurs propres à un modèle
+
+Les modules :
+Pour écrire des ??? + avancés
+On crée un module en mettant une valeur à Ng-appa
+Les [] correspondent à un tableau vide que l'on pourra additionner + tard.
+
+Les contrôleurs :
+Grâce au module que nous avons déclaré, nous allons désormais pouvoir ajouter des contrôleurs;
+Les contrôleurs permettent de faire le lien entre des données récupérées en javascript et les éléments html;
+Une fois le contrôleur ajouté, il faut indiquer au template le contrôleur qu'il va devoir utiliser;
+Puis ajout des données du contrôleur dans le html;
+Avec Angular, $scope fait toujours référence à notre application;
+En définissant $scope.<variable>, je définis une variable accessible dans le template de l'application;
+- Ng-repeat : permet de parcourir un tableau : répète un élément html et y place la valeur du tableau
+(comme une boucle js classique); !! Ne pas l'indiquer sur l'élément parent !!;
+film est une variable temporaire. La variable 'films' est un tableau.
+La variable temporaire 'film' permet de stocker les données/entrées du tableau.
+Pour afficher un tableau d'objet, on écirait : {{film.nom}};
+
+Comment ajouter dynamiquement des films depuis le template à notre liste de films :
+two way binding = data-binding à deux entrées;
+
+Service http d'Angular :
+Dans notre javascript : app.controlleur('myCtrl', function ($scope)){}
+va devenir app.controlleur('myCtrl', function ($scope,$http){}
+$http({
+method:"POST",
+url:"test.php",
+data:{nouveauFilm : $scope.ajoutFilm}
+}).then(function Success(response){ alert (response.data);},
+function Error (response) { alert(response.statusText);
+});
+
+Routage :
+https://code.angularjs.org/1.7.5/
+
+Pour les animations :
+    angular-messages.min.js.map
+    angular-mocks.js
+    angular-parse-ext.js
+    angular-parse-ext.min.js
+
+Fonction qui permet à un utilisateur d'accéder à telle partie
+Chargement de templates via des liens (pour afficher la liste qui correspond à la demande/requête
+dans un html qui se charge en direct, dynamiquement)
+taper ds Google : 'code.angularjs.org/1.7.5'
+    angular-route.js
+    angular-route.min.js

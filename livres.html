@@ -1,0 +1,9 @@
+<p>Nom : <input type="text" data-ng-model="name"></p>
+<p>Prénom : <input type="text" data-ng-model="lastname"></p>
+<span>Votre nom est : {{name}} {{lastname}}</span>
+<ol>
+    <li data-ng-repeat="livre in livres">{{livre}}</li>
+</ol>
+
+<input type="text" name="ajoutLivre" data-ng-model="ajoutLivre">
+<button data-ng-click="ajouterLivre()">Ajouter un livre</button>
