@@ -1,4 +1,13 @@
 <?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "";
+
+$conn = new mysqli($servername, $username, $password);
+$conn->select_db($dbname);
+
 // recherche à taper ds Google : 'php get json post data'
 //https://www.geeksforgeeks.org/how-to-receive-json-post-with-php/
 // Takes raw data from the request
@@ -10,8 +19,52 @@ $data = json_decode($json, true);
 // $data = json_decode($json, true);
 print_r($data);
 
+
+
+
 $nouveauFilm = $data['nouveauFilm'];
 
+
+/*
+ * REQUETE PREPAREE INSERT
+$name = $_POST['name'];
+$difficulty = $_POST['difficulty'];
+$distance = $_POST['distance'];
+$duration = $_POST['duration'];
+$height_difference = $_POST['height_difference'];
+
+
+$stmt = $conn->prepare("INSERT INTO hiking (name, difficulty, distance, duration, height_difference) VALUES (?,?,?,?,?)");
+
+$stmt->bind_param("ssiii", $name, $difficulty, $distance, $duration, $height_difference);
+
+
+if($stmt->execute()){
+    print "Le film <span style='font-weight: bold'>$name</span> a bien été ajouté à la base de données.";
+}else{
+    print $conn->error;
+}
+
+
+//$stmt->execute();
+
+$stmt->close();
+*/
+
+/*
+ * REQUETE INSERT
+$conn = new mysqli($servername,$username,$password);
+if ($conn->connect_error){
+    echo $conn->connect_error;
+}
+else {
+    $conn->select_db($dbname);
+
+    $sql = "INSERT INTO eleves VALUES (NULL, '$nom', '$prenom', '$age')";
+    $conn->query($sql);
+    echo $conn->error;
+}
+*/
 
 
 // poss de maniupler les données :
