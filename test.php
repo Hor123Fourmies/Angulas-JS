@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "";
+$dbname = "produits_culturels";
 
 $conn = new mysqli($servername, $username, $password);
 $conn->select_db($dbname);
@@ -22,7 +22,8 @@ print_r($data);
 
 
 
-$nouveauFilm = $data['nouveauFilm'];
+// $nouveauFilm = $data['nouveauFilm'];
+$titre = $data['nouveauFilm'];
 
 
 /*
@@ -51,8 +52,8 @@ if($stmt->execute()){
 $stmt->close();
 */
 
-/*
- * REQUETE INSERT
+
+// * REQUETE INSERT
 $conn = new mysqli($servername,$username,$password);
 if ($conn->connect_error){
     echo $conn->connect_error;
@@ -60,11 +61,17 @@ if ($conn->connect_error){
 else {
     $conn->select_db($dbname);
 
-    $sql = "INSERT INTO eleves VALUES (NULL, '$nom', '$prenom', '$age')";
-    $conn->query($sql);
-    echo $conn->error;
+    $sql = "INSERT INTO films VALUES (NULL, '$titre')";
+
+    if ($conn->query($sql)){
+        echo "Le film a bien été ajouté à la base de données";
+    }
+    else {
+        echo $conn->error;
+        echo "Erreur";
+    };
 }
-*/
+
 
 
 // poss de maniupler les données :
