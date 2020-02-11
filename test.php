@@ -26,6 +26,8 @@ print_r($data);
 $titre = $data['nouveauFilm'];
 
 
+
+
 /*
  * REQUETE PREPAREE INSERT
 $name = $_POST['name'];
@@ -64,7 +66,7 @@ else {
     $sql = "INSERT INTO films VALUES (NULL, '$titre')";
 
     if ($conn->query($sql)){
-        echo "Le film a bien été ajouté à la base de données";
+        echo "Le film a bien été ajouté à la base de données.";
     }
     else {
         echo $conn->error;
